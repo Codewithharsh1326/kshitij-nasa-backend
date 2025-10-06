@@ -17,19 +17,19 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 # Model configuration
 MODELS = {
     'k2pandc': {
-        'knn': 'D:/NASA/Code/knn_model_k2_dispo.pkl',
-        'rf': 'D:/NASA/Code/rf_model_k2_dispo.pkl',
+        'knn': 'knn_model_k2_dispo.pkl',
+        'rf': 'rf_model_k2_dispo.pkl',
         'cnn': {
-            'model': 'D:/NASA/Code/best_model_k2_dispo.keras',
-            'preprocessing': 'D:/NASA/Code/cnn_preprocessing_k2_dispo.pkl'
+            'model': 'best_model_k2_dispo.keras',
+            'preprocessing': 'cnn_preprocessing_k2_dispo.pkl'
         }
     },
     'cumi': {
-        'knn': 'D:/NASA/Code/knn_cumi_model.pkl',
-        'rf': 'D:/NASA/Code/rf_cumi_model.pkl',
+        'knn': 'knn_cumi_model.pkl',
+        'rf': 'rf_cumi_model.pkl',
         'cnn': {
-            'model': 'D:/NASA/Code/best_model_cummi.keras',
-            'preprocessing': 'D:/NASA/Code/cnn_preprocessing_cummi.pkl'
+            'model': 'best_model_cummi.keras',
+            'preprocessing': 'cnn_preprocessing_cummi.pkl'
         }
     }
 }
@@ -77,8 +77,8 @@ model_descriptions = {
 }
 
 FEATURE_MAPPING_FILES = {
-    'k2pandc': 'D:/NASA/Code/k2pandc_feature_mapping.csv',
-    'cumi': 'D:/NASA/Code/cumi_feature_mapping.csv'
+    'k2pandc': 'k2pandc_feature_mapping.csv',
+    'cumi': 'cumi_feature_mapping.csv'
 }
 
 def load_sklearn_model(model_path):
@@ -737,4 +737,5 @@ def preview_dataset(dataset_name):
         }), 500
 
 if __name__ == '__main__':
+
     app.run(debug=True, host='0.0.0.0', port=5000)
